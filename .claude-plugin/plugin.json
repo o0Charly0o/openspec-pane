@@ -1,6 +1,6 @@
 {
   "name": "openspec-pane",
-  "version": "0.2.3",
+  "version": "0.6.0",
   "description": "Side pane with the tasks of the active OpenSpec changes, refreshed as work goes on; opens by itself at session start when there are active changes. Command: /openspec.",
   "types": "./types/index.d.ts",
   "icon": "./icon.png",
