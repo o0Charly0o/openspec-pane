@@ -44,7 +44,16 @@ While an agent works on a change, its card turns green with a spinner and the ti
 ## What it reads, runs and sends
 
 - **Reads** `openspec/changes/**` of the project root: `.openspec.yaml`, `proposal.md`, `design.md`, `tasks.md`, the `specs/` folder (only whether it holds a `spec.md`) and the names of the folders in `archive/`. Nothing else, and never the conversation, the environment variables or the settings.
-- **Runs** one thing: the slash command of OpenSpec behind a button, as if you had typed it, once you press that button. It starts no program and no shell.
+- **Runs** slash commands, only when you press a button, and only these, as if you had typed them in the prompt:
+
+  | Button | Command it runs | Fallback if the session lacks it |
+  |---|---|---|
+  | `continue ▶` | `/opsx:propose <change>` | `/openspec-propose <change>` |
+  | `apply ▶` | `/opsx:apply <change>` | `/openspec-apply-change <change>` |
+  | `archive ▶` | `/opsx:archive <change>` | `/openspec-archive-change <change>` |
+
+  The pane never runs a command by itself, on a timer or at session start, and never one that is not in this table. `<change>` is the folder name of the change on the card you pressed. It starts no program and no shell.
+- **Hooks the `command.run` event** only to answer its own `/openspec` command (it opens or refreshes the pane). It ignores every other command, changes none and blocks none. The pane also watches the start and end of model turns to know which change an agent is working on, and changes nothing there.
 - **Sends** nothing: no network request and no data leaves your machine.
 - **Stores** nothing between sessions.
 
