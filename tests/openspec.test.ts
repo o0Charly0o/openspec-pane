@@ -204,6 +204,6 @@ test('the archive button runs openspec archive for the change', async ($, on) =>
   const ui = await $.ui.mount({ ...PANE, surface: 'terminal' })
   await ui.press({ plugin: 'openspec-pane', key: 'tab-done' })
   await ui.press({ plugin: 'openspec-pane', key: 'archive-done' })
-  expect(ran[0]?.slice(-2)).toEqual(['openspec', 'done'])
+  expect(ran[0]).toEqual(['openspec', 'archive', 'done', '--yes'])
   await ui.unmount()
 })

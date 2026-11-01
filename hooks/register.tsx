@@ -152,9 +152,8 @@ async function refresh($: EngineInterface): Promise<void> {
  * archive/ under today's date and applies its spec deltas to the main specs).
  */
 async function archiveChange($: EngineInterface, name: string): Promise<void> {
-  const script = '[ -s "${NVM_DIR:-$HOME/.nvm}/nvm.sh" ] && . "${NVM_DIR:-$HOME/.nvm}/nvm.sh" >/dev/null 2>&1; exec openspec archive "$1" --yes'
   try {
-    const { exitCode, stdout, stderr } = await $.process.run(['bash', '-c', script, 'openspec', name], {
+    const { exitCode, stdout, stderr } = await $.process.run(['openspec', 'archive', name, '--yes'], {
       cwd: await $.session.root(),
       timeoutMs: 60000,
     })
