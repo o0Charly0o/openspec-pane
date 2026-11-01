@@ -1,6 +1,13 @@
 {
   "name": "openspec-pane",
-  "owner": { "name": "o0Charly0o" },
-  "description": "A side pane showing the tasks of the active OpenSpec changes in the current project.",
-  "plugins": [{ "name": "openspec-pane", "source": "./" }]
+  "owner": {
+    "name": "o0Charly0o"
+  },
+  "description": "A side pane that follows the stages of the active OpenSpec changes in the current project.",
+  "plugins": [
+    {
+      "name": "openspec-pane",
+      "source": "./"
+    }
+  ]
 }

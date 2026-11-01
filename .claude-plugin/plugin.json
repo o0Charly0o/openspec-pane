@@ -1,7 +1,7 @@
 {
   "name": "openspec-pane",
-  "version": "0.6.1",
-  "description": "Side pane with the tasks of the active OpenSpec changes, refreshed as work goes on; opens by itself at session start when there are active changes. Command: /openspec.",
+  "version": "0.7.0",
+  "description": "Side pane that follows the stages of the active OpenSpec changes (planning, apply, ready to archive, archived), with a button per stage that runs the matching OpenSpec command and a green spinner on the task an agent is working on. Command: /openspec.",
   "types": "./types/index.d.ts",
   "icon": "./icon.png",
   "author": {
